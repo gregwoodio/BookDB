@@ -1,17 +1,30 @@
 // models.js
-
+var process = require('process');
 var Sequelize = require('sequelize');
 
-var sequelize = new Sequelize('bookdb', 'bookuser', 'bookpassword', {
-  host: 'localhost',
-  dialect: 'mysql',
+if (process.env.NODE_ENV = 'test') {
+  var sequelize = new Sequelize('bookdbtest', 'bookuser', 'bookpassword', {
+    host: 'localhost',
+    dialect: 'mysql',
 
-  pool: {
-    max: 5,
-    min: 0,
-    idle: 10000
-  }
-});
+    pool: {
+      max: 5,
+      min: 0,
+      idle: 10000
+    }
+  });
+} else {
+  var sequelize = new Sequelize('bookdb', 'bookuser', 'bookpassword', {
+    host: 'localhost',
+    dialect: 'mysql',
+
+    pool: {
+      max: 5,
+      min: 0,
+      idle: 10000
+    }
+  });
+}
 
 var Author = sequelize.define('authors', {
   authorid: {

@@ -4,7 +4,7 @@
   "description": "Book API for gregwood.tech post.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha tests/tests.js"
   },
   "author": "",
   "license": "ISC",
@@ -13,5 +13,10 @@
     "express": "^4.14.0",
     "mysql": "^2.11.1",
     "sequelize": "^3.24.3"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-http": "^3.0.0",
+    "mocha": "^3.1.2"
   }
 }

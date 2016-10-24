@@ -51,7 +51,7 @@ Query OK, 1 row affected (0.00 sec)
 mysql> CREATE TABLE authors (authorid INTEGER PRIMARY KEY AUTO_INCREMENT, authorname VARCHAR(250));
 Query OK, 0 rows affected (0.03 sec)
 
-CREATE TABLE books (bookid INTEGER PRIMARY KEY AUTO_INCREMENT, title VARCHAR(250), authorid INTEGER, FOREIGN KEY (authorid) REFERENCES authors(authorid));
+mysql> CREATE TABLE books (bookid INTEGER PRIMARY KEY AUTO_INCREMENT, title VARCHAR(250), authorid INTEGER, FOREIGN KEY (authorid) REFERENCES authors(authorid));
 
 mysql> CREATE USER 'bookuser'@'localhost' IDENTIFIED BY 'bookpassword';
 Query OK, 0 rows affected (0.00 sec)
