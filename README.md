@@ -110,7 +110,7 @@ var Book = sequelize.define('books', {
   }
 });
 
-Book.belongsTo(Author, {
+Author.hasMany(Book, {
   foreignKey: 'authorid'
 });
 ```

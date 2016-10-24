@@ -34,7 +34,10 @@ module.exports = function(app) {
     models.Author.find({
       where: {
         authorid: req.params.id
-      }
+      },
+      include: [{
+        model: models.Book
+      }]
     })
     .then(function(author) {
       res.json({

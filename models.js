@@ -45,8 +45,8 @@ var Book = sequelize.define('books', {
   timestamps: false
 });
 
-Book.belongsTo(Author, {
-  foreignKey: 'bookid'
+Author.hasMany(Book, {
+  foreignKey: 'authorid'
 });
 
 module.exports = {
